@@ -29,12 +29,13 @@ def main():
         df_filtrado = df
 
     total_custo = (df_filtrado["Custo"].sum())
-    locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8")
-    total_custo = locale.currency(total_custo, grouping=True)
+    total_custo = f"R$ {total_custo:,.2f}"
+    #locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8")
+    #total_custo = locale.currency(total_custo, grouping=True)
     
 
     total_lucro = (df_filtrado["Lucro"].sum())
-    total_lucro = locale.currency(total_lucro, grouping=True)
+    total_lucro = f"R$ {total_lucro:,.2f}"
     
 
     total_clientes = df_filtrado["ID Cliente"].nunique()
